@@ -12,6 +12,8 @@ postman 获取上一个接口里面的body值作为下一个接口的参数
 var jsonData =JSON.parse(responseBody);//获取body中返回的所有参数
 postman.setEnvironmentVariable("appKey",jsonData.data.appKey);//把返回参数中的keys设置为环境变量
 
+【一定要注意“jsonData.data.appKey”  即 定位返回值的位置，可点击左侧小三角形，折叠报文！！！！！！！！！！！！ 】
+
 
 
 ######################################################################################################################
