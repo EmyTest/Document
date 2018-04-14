@@ -55,3 +55,8 @@ tests["Content-Type is present"] = postman.getResponseHeader("Content-Type");
 
 tests["Content-Type is present"] = responseHeaders.hasOwnProperty("Content-Type");
 上面的方法，不区分大小写。下面的方法，要区分大小写。 
+
+
+
+
+![可妮兔](D/Downloads/timg.jpg)
