@@ -3,3 +3,59 @@ guest/settings.py：Django 项目的配置文件，包括 Django 模块应用配
 guest/urls.py：Django 项目的 URL 声明。
 guest/wsgi.py：为 WSGI 兼容的 Web 服务器服务项目的切入点。
 manage.py：一个命令行工具，可以让你在使用 Django 项目时以不同的方式进行交互
+
+
+
+python   --> orm   -->  pymysql  ---> mysql
+运行django时 ：1、复制配置文件的时候没有对齐；2、没有cmd下启动gjango （python（注：文件夹名称） manage.py runserver）
+
+1：  在.../python/Scripts/目录中将会多出一个 django-admin.exe 文件。在Windows 命令提示符下输入“django-admin”命令回车
+2：  D:\pydj>django-admin startproject guest #创建 guest 项目
+3：  D:\pydj>cd guest # 进入 guest 项目目录
+     D:\pydj\guest>python manage.py # 查看 manage 所提供的命令
+
+4：    D:\pydj\guest>python manage.py startapp sign   #创建 sign 
+5：   运行项目 ：D:\pydj\guest>python3 manage.py runserver
+
+
+6：  首先需要配置一下 guest/settings.py 文件，将 sign 应用添加到项目中
+# Application definition
+  INSTALLED_APPS = [
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'sign', #添加 sign 应用
+]
+
+
+接下来想一想，我们应该用哪个路径来显示“Hello Django!”。命名一个/index/路径。在浏览器地址栏输入：http://127.0.0.1:8001/index/
+
+报错  ： 根据本 Django 的提示，再接下来打开 guest/urls.py 文件添加该目录
+
+在 guest/urls.py 下添加：
+from django.conf.urls import url
+from django.contrib import admin
+from sign import views #导入 sign 应用 views 文件
+urlpatterns = [
+  url(r'^admin/', admin.site.urls),
+  url(r'^index/$', views.index), #添加 index/路径配置
+]
+
+
+
+
+启动 报错
+
+../sign/views.py 文件创建 index 函数：
+
+from django.http import HttpResponse
+# Create your views here.
+def index(request):
+  return HttpResponse("Hello Django!")
+  
+  
+  
+  页面成功出现了“Hello Django！”
