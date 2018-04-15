@@ -59,3 +59,22 @@ def index(request):
   
   
   页面成功出现了“Hello Django！”
+  
+  
+  
+  
+  
+  
+  sign -->新建 directory    命名：templates
+  
+  templates下  创建python file:index.html
+  
+  views.py :
+  def index(request):
+    #return HttpResponse("<h1>Hello Django!<h1>")
+    return render(request,"index.html")
+  
+  
+  
+  
+ 
