@@ -1,0 +1,5 @@
+guest/__init__.py：一个空的文件，用它标识一个目录为 Python 的标准包。
+guest/settings.py：Django 项目的配置文件，包括 Django 模块应用配置，数据库配置，模板配置等。
+guest/urls.py：Django 项目的 URL 声明。
+guest/wsgi.py：为 WSGI 兼容的 Web 服务器服务项目的切入点。
+manage.py：一个命令行工具，可以让你在使用 Django 项目时以不同的方式进行交互
