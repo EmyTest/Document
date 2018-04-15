@@ -57,5 +57,5 @@ tests["Content-Type is present"] = responseHeaders.hasOwnProperty("Content-Type"
 上面的方法，不区分大小写。下面的方法，要区分大小写。 
 
 
-![日喔](https://wx2.sinaimg.cn/orj360/b278a87fly1fqc5a3qy49j20xc1n9402.jpg) 
+![c](https://wx2.sinaimg.cn/orj360/b278a87fly1fqc5a3qy49j20xc1n9402.jpg) 
 
