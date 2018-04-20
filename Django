@@ -7,7 +7,7 @@ manage.py：一个命令行工具，可以让你在使用 Django 项目时以不
 
 
 python   --> orm   -->  pymysql  ---> mysql
-运行django时 ：1、复制配置文件的时候没有对齐；2、没有cmd下启动gjango （python（注：文件夹名称） manage.py runserver）
+运行django时 ：1、复制配置文件的时候没有对齐；2、没有cmd下启动gjango （python（注：文件夹名称） manage.py runserver）！！！！！！！！！！！！！
 
 1：  在.../python/Scripts/目录中将会多出一个 django-admin.exe 文件。在Windows 命令提示符下输入“django-admin”命令回车
 2：  D:\pydj>django-admin startproject guest #创建 guest 项目
