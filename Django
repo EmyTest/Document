@@ -47,6 +47,23 @@ urlpatterns = [
 
 
 
+
+
+
+
+案例二：
+
+from django.conf.urls import url
+from django.contrib import admin
+
+import blog.views as bv
+urlpatterns = [
+  url(r'^admin/', admin.site.urls),
+  url(r'^index/', bv.index), #添加 index/路径配置
+]
+
+
+
 启动 报错
 
 ../sign/views.py 文件创建 index 函数：
