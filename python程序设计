@@ -1,0 +1,63 @@
+eval(str)函数很强大，官方解释为：将字符串str当成有效的表达式来求值并返回计算结果。所以，结合math当成一个计算器很好用。
+
+eval()函数常见作用有： 
+1、计算字符串中有效的表达式，并返回结果
+
+
+2、将字符串转成相应的对象（如list、tuple、dict和string之间的转换）
+>>> a = "[[1,2], [3,4], [5,6], [7,8], [9,0]]"
+>>> b = eval(a)
+>>> b
+[[1, 2], [3, 4], [5, 6], [7, 8], [9, 0]]
+>>> a = "{1:'xx',2:'yy'}"
+>>> c = eval(a)
+>>> c
+{1: 'xx', 2: 'yy'}
+>>> a = "(1,2,3,4)"
+>>> d = eval(a)
+>>> d
+(1, 2, 3, 4)
+
+
+3、将利用反引号转换的字符串再反转回对象
+>>> list1 = [1,2,3,4,5]
+>>> `list1`
+'[1, 2, 3, 4, 5]'
+>>> type(`list1`)
+<type 'str'>
+>>> type(eval(`list1`))
+<type 'list'>
+>>> a = eval(`list1`)
+>>> a
+[1, 2, 3, 4, 5]
+
+
+
+'''利用字典 比较大小  求其中较大的两个数的平均值：'''
+
+score = []
+score.append(eval(input("enter first score: ")))
+score.append(eval(input("enter second score: ")))
+score.append(eval(input("enter third score: ")))
+score.remove(min(score))
+average = sum(score)/2
+print("average of the two higest scores is {0:.2f}".format(average))
+
+
+
+
+'''
+军用时间转换为普通时间
+'''
+
+militaryTime = input("enter a militaryTime (0000 to 2359):")
+hours = int(militaryTime[0:2])
+minutes = int(militaryTime[2:4])
+if hours > 12:
+    cycle = "pm"
+    hours %= 12
+else:
+    cycle = "am"
+    if hours == 0:
+        hours = 12
+print("the regular time is {0}:{1}{2}".format(hours,minutes,cycle))
