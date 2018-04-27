@@ -61,3 +61,100 @@ else:
     if hours == 0:
         hours = 12
 print("the regular time is {0}:{1}{2}".format(hours,minutes,cycle))
+
+
+
+
+
+python文件路径读取
+https://blog.csdn.net/databatman/article/details/49453953
+
+
+
+
+
+
+# lakes = ["eric","huron","michigan","ontario","superior"]
+# result = ""
+# for i in range(len(lakes)):
+#     result += lakes[i]
+#     if i < len(lakes) - 1:
+#         result += ","
+# print(result)
+#
+# lakes = ["eric","huron","michigan","ontario","superior"]
+# for result in lakes:
+#     print(result)
+
+# 
+# lakes = ["eric","huron","michigan","ontario","superior"]
+# print(",".join(lakes))
+
+
+
+
+计算句子中的元音字母：
+# 
+phrase = input("enter the prase: ")
+num = 0
+for i in phrase:
+    if i in["i","e","a","o","u"]:
+        num+=1
+    print(num)
+
+
+# total = 0
+# phrase = input(" enter a phrase: ")
+# phrase.lower()
+# for ch in phrase:
+#     if ch in "aeiou":
+#         total+=1
+# print( "count is: ",total)
+
+
+出错点： 
+1、没有大小写处理
+2、循环遍历的时候不能用字典表示
+3、print的缩进！！！！！！
+
+
+
+计算：1+1/2+1/3+1/4+...+1/100的值：
+sum = 0
+for i in range(1,101):
+    sum += 1/i
+print("sum = {0:.5f} to five.....".format(sum))
+
+
+
+
+
+
+python判断字母是否按字典序列排序
+
+
+ word = input("enter a word: ")
+# firstletetr = ""
+# secondletter = ""
+# flag = True
+# for i in range(0,len(word)-1):
+#     firstletetr = word[i]
+#     print("diyi",firstletetr)
+#     secondletter = word[i+1]
+#     print("dier",secondletter)
+#     if firstletetr >secondletter:
+#         flag = False
+#         break
+# if flag:
+#     print("in order")
+# else:
+#     print("not in order")
+
+
+知识点：
+1、字符串之间的比较
+2.字符串的循环遍历
+3.flag判断
+
+print('a'>'b')
+print('a'<'b')
