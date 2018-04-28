@@ -252,7 +252,11 @@ print(listname)     #得出结果
     #         print(vowelsFound)
     # # print("number of vowels: ",numVowels)
     
-    
+  
+  
+  
+  
+  
 二： 编写一段程序，要求用户输入一句话，然后将所有的字母r去掉
     sentence = input("enter a sentence: ")
     newSentence = ""
@@ -285,4 +289,20 @@ p119 t83：
     3、插入的方法 append()
     
     
+    
+    
+    
+    
+    
+***********************************************   
+*     取名字的姓    利用字典 [：firstspace]     *
+***********************************************
+
+def firstName(fullName):
+    firstSpace = fullName.index(" ")
+    print(firstSpace)
+    givenName = fullName[:firstSpace]
+    return givenName
+fullName = input("enter a person's full name: ")
+print("first name:",firstName(fullName))
     
