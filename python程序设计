@@ -158,3 +158,131 @@ python判断字母是否按字典序列排序
 
 print('a'>'b')
 print('a'<'b')
+
+
+
+单复利：p116 T60
+r = 0.05
+salary = int(input("salary: "))
+print("simple interest  ","compound interest")
+for year in range(1,5):
+    earn = salary*r*year
+    money = salary+earn
+    mon = salary*(1+0.05)**year
+    print("{0}.${1} \t\t\t\t{2}".format(year,money,mon))
+    
+    
+    
+    
+    
+    求中位数：
+    
+datas = []
+count = int(input("enter the count you want calculate: "))
+for i in range (count):
+    data = int(input("enter a number: "))
+    datas.append(data)
+datas.sort()
+L=len(datas)
+m=L//2
+if L%2 == 0:
+    media =(datas[m]+datas[m-1])/2
+else:
+    media =datas[m]
+print(media)
+
+
+
+
+
+####P118 T75：
+    一个由r个人组成的小组，至少两个人生日相同的概率为：1-（n/n * n-1/n *...(n-(r-1）)/n  其中n是天数。计算r从21到25 的概率
+
+for r in range(21,26):
+    product = 1
+    for t in range(1,r):
+        product=product*((365-t)/365)
+    print("{0}   {1:.3f}".format(r,1-product))
+    
+    
+    
+    
+    
+    
+    
+##########python  将文件的单词按照字母表的顺序输出
+
+p53：
+    文本文件
+    infile = open("data.txt",'r')
+    listName = [line.rstrip() for line in infile]
+    infile.close()
+    
+    
+    
+#p118 t76    
+infile = open('E:\\state.txt','r')    #读取文件
+listname = [line.rstrip() for line in infile]   #用字典表示出来
+listname.sort()    #进行排序
+print(listname)     #得出结果
+
+
+
+
+
+
+
+
+
+
+？？？？？？
+
+一： 编写一段程序，由一个单词作为输入，然后计算单词中不同原因的数量：
+
+    # word = input("enter a word: ")
+    # word = word.upper()
+    # vowels = "AEIOU"
+    # vowelsFound = []
+    # numVowels = 0
+    # # print("#",vowelsFound)
+    # for letter in word:
+    #     if (letter in vowels) and (letter not in vowelsFound):
+    #         numVowels += 1
+    #         vowelsFound.append(letter)
+    #         print(vowelsFound)
+    # # print("number of vowels: ",numVowels)
+    
+    
+二： 编写一段程序，要求用户输入一句话，然后将所有的字母r去掉
+    sentence = input("enter a sentence: ")
+    newSentence = ""
+    for ch in sentence:
+        if ch.upper() != 'R':
+            newSentence += ch
+    print(newSentence)
+    
+    
+    
+    
+p119 t83：
+    justices = ["scalia r","kennedy r","thomas r","finsburg d","beryer d","roberts r","alito r","sotomayor d","kagan d"]
+    demappointtees = []
+    repappointees = []
+    for justice in justices:
+        if justice[-1] =='d':
+            demappointtees.append(justice[:-2])
+        else:
+            repappointees.append(justice[:-2])
+    named = ','.join(demappointtees)
+    namer = ','.join(repappointees)
+    print("demappointtees: ",named)
+    print("repappointees: ",namer)
+
+
+***********：
+    1、字典的读取  [-1]  [-2] 的运用
+    2、join方法的使用 strVar = ",".join(L)
+    3、插入的方法 append()
+    
+    
+    
