@@ -785,3 +785,14 @@ import random
 list1 = [chr(n) for n in range(ord('A') ,ord('Z')+1)]
 list2 = random.sample(list1,3)
 print(",".join(list2))
+
+
+
+
+抛硬币100次，输出“正面”朝上的次数
+import random
+numberOfHeads = 0
+for i in range(100):
+    if (random.choice(["head","tail"]) == "head"):
+        numberOfHeads += 1
+print("in 100 tosses,heads occurred {0} times".format(numberOfHeads))
