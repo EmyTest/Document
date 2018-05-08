@@ -779,6 +779,9 @@ main()
 
 
 
+随机从字母表中选取三个字母输出
 
-
-
+import random
+list1 = [chr(n) for n in range(ord('A') ,ord('Z')+1)]
+list2 = random.sample(list1,3)
+print(",".join(list2))
