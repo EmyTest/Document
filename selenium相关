@@ -1,0 +1,35 @@
+iframe定位
+https://blog.csdn.net/huilan_same/article/details/52200586
+
+如：126邮箱
+
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.get("http://www.126.com")
+
+
+time.sleep(5)
+print('before login ==============')
+
+title = driver.title
+print(title)
+now_url = driver.current_url
+print(now_url)
+driver.switch_to.frame("x-URS-iframe")
+driver.find_element_by_name("email").clear()
+driver.find_element_by_name("email").send_keys("mg5851")
+driver.find_element_by_name("password").clear()
+driver.find_element_by_name("password").send_keys("yuyu0110")
+driver.find_element_by_id("dologin").click()
+time.sleep(5)
+print('After login========')
+title = driver.title
+print(title)
+
+now_url = driver.current_url
+print(now_url)
+user = driver.find_element_by_id('spnUid').text
+print(user)
+driver.quit()
