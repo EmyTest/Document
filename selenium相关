@@ -1,3 +1,6 @@
+问题一：
+
+
 iframe定位
 https://blog.csdn.net/huilan_same/article/details/52200586
 
@@ -33,3 +36,9 @@ print(now_url)
 user = driver.find_element_by_id('spnUid').text
 print(user)
 driver.quit()
+
+
+问题er
+
+page object分类
+
