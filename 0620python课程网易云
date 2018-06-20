@@ -1,1 +1,90 @@
 
+logging模块级别的日志
+使用以下几个函数
+logging.debug(msg,*args,**kwargs) 创建一条严重级别为DEBUG的日志
+logging.info(msg,*args,**kwargs) 创建一条严重级别为INFO的日志
+logging.warning(msg,*args,**kwargs) 创建一条严重级别为WARNING的日志
+logging.error(msg,*args,**kwargs) 创建一条严重级别为ERROR的日志
+logging.critical(msg,*args,**kwargs) 创建一条严重级别为CRITICAL的日志
+logging.log(msg,*args,**kwargs) 创建一条严重级别为level的日志
+logging.basic(**kwargs) 对root logger 进行一次性配置
+
+
+logging.basicConfig（**kwargs） 对root logger 进行一次性配置
+只在第一次调用的时候起作用
+不配置logger则使用默认值
+输出： sys.stderr
+级别： WARNING
+格式： level:log_name:content
+
+
+
+
+
+
+import logging
+logging.basicConfig(filename="tulingxueyuan.log",level=logging.DEBUG)
+
+logging.debug("This is a dubug log.")
+logging.info("this is a info log.")
+logging.warning("this is a warning log")
+logging.error("this is a error log.")
+logging.critical("this is a critical log.")
+
+logging.log(logging.DEBUG,"This is a dubug log.")
+logging.log(logging.INFO,"This is a info log.")
+logging.log(logging.WARNING,"this is a warning log.")
+logging.log(logging.ERROR,"this is a error log.")
+logging.log(logging.CRITICAL,"This is a critical log.")
+
+
+
+
+logging模块的处理流程
+四大组件
+  日志器（logger） 产生日志的一个接口
+  处理器（handler）把产生的日志发生到相应的目的地
+  过滤器（filter） 更精细的控制那些日志输出
+  格式器（formatter）对输出信息进行格式化
+  
+  
+logger
+产生一个日志
+操作
+  logger.setlevel() 
+  logger.addHandler()
+  logger.addFilter()
+  logger.debug()
+  
+  
+  
+  format类
+  直接实例化
+  可以继承format添加特殊内容
+  三个参数
+  fmt：指定消息格式化字符串，如果不指定该参数则默认使用message的原始值
+  datefmt：指定日期格式字符串，如果不指定该参数则默认使用"%Y-%m-%d %H:%M:%S"
+  style :python 3.2新增的参数，可取值为'%','{'和'$' ，如果不指定该参数则默认使用‘%’
+
+全局解释器 （GIL）
+python代码的执行是由python虚拟机控制
+在主循环中只能共用一个控制线程在执行
+
+
+thread ： 有问题，不好用，python3改成了_thread
+threading ： 通行的包
+
+案例01 ： 顺序执行，耗时比较长
+02：改用多线程，缩短总时间，使用_thread
+03：多线程，传参数
+
+
+
+
+
+threading 的使用
+直接利用threading.Thread(target=xxx,args=(xxx,))
+
+
+
+
